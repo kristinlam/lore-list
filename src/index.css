@@ -10636,6 +10636,7 @@ a.has-text-danger-dark:hover {
   padding: 20px 40px 30px;
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 .book-create h3 {
   color: #fff;
