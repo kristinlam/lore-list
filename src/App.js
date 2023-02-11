@@ -14,10 +14,19 @@ const App = () => {
     setBooks(filteredBooks);
   };
 
+  const editBookById = (id, newTitle) => {
+    const updatedArray = books.map((book) => {
+      if (book.id === id) return { ...book, title: newTitle };
+      else return book;
+    });
+    setBooks(updatedArray);
+  };
+
   return (
-    <div>
+    <div className="app">
+      <h1>Lore List</h1>
       <BookCreate onCreate={createBook} />
-      <BookList books={books} onDelete={deleteBookById} />
+      <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
     </div>
   );
 };
